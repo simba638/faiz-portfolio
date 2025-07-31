@@ -11,10 +11,12 @@
   <style>
     :root {
       --bg-light: #f9f6f1;
-      --bg-dark: #1e1e1e;
+      --bg-dark: #1a1a1a;
       --text-light: #333333;
-      --text-dark: #ffffff;
+      --text-dark: #f1f1f1;
       --accent: #b76e79; /* rose gold */
+      --card-light: #ffffff;
+      --card-dark: #2a2a2a;
     }
 
     body {
@@ -58,6 +60,11 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.08);
     }
 
+    body.dark .profile {
+      background: var(--card-dark);
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+    }
+
     .profile img {
       width: 170px;
       height: 170px;
@@ -72,17 +79,26 @@
     }
 
     section {
-      background: linear-gradient(to right, #fff, #fdf4f4);
+      background: var(--card-light);
       margin-top: 20px;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
+    body.dark section {
+      background: var(--card-dark);
+      box-shadow: 0 0 10px rgba(255,255,255,0.03);
+    }
+
     h2 {
       border-bottom: 2px solid #eee;
       padding-bottom: 8px;
       color: var(--accent);
+    }
+
+    body.dark h2 {
+      border-color: #444;
     }
 
     ul {
@@ -116,6 +132,11 @@
     .icon-text img {
       width: 20px;
       height: 20px;
+      filter: brightness(1);
+    }
+
+    body.dark .icon-text img {
+      filter: brightness(2);
     }
 
     @media (max-width: 600px) {
