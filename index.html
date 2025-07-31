@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Faiz Ahmad - Portfolio</title>
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -20,7 +19,7 @@
 
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Roboto', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: background 0.4s, color 0.4s;
@@ -136,24 +135,24 @@
 
   <button class="toggle-btn" onclick="toggleMode()">🌙 Light/Dark</button>
 
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="profile">
       <img src="faiz.jpg" alt="Faiz Ahmad">
       <h1>Faiz Ahmad</h1>
       <div class="typing" id="typing-text"></div>
     </div>
 
-    <section data-aos="fade-right">
+    <section>
       <h2>About Me</h2>
       <p>Hello! I'm Faiz Ahmad, a passionate Telegram bot developer and first-year student. I love building bots that simplify and innovate user experience on Telegram.</p>
     </section>
 
-    <section data-aos="fade-left">
+    <section>
       <h2>Skills</h2>
       <p>• Telegram Bot Development<br>• Python<br>• API Integration</p>
     </section>
 
-    <section data-aos="fade-right">
+    <section>
       <h2>Projects</h2>
       <ul>
         <li><strong>File Store Bot</strong> – Stores files and generates shareable links</li>
@@ -162,7 +161,7 @@
       </ul>
     </section>
 
-    <section data-aos="fade-left">
+    <section>
       <h2>Contact</h2>
       <div class="icon-text">
         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
@@ -175,15 +174,11 @@
     </section>
   </div>
 
-  <footer data-aos="fade-up">
+  <footer>
     <p>© 2025 Faiz Ahmad. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
     const typingText = document.getElementById("typing-text");
     const roles = ["Telegram Bot Developer", "Python Coder", "Tech Explorer"];
     let i = 0, j = 0, current = "", isDeleting = false;
