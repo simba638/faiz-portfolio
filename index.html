@@ -4,15 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Faiz Ahmad - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #333;
+      --box: #fff;
+      --border: #f1d9d9;
+      --title: #a15e5e;
+      --accent: #b46666;
+      --footer-bg: #a36868;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --box: #1e1e1e;
+      --border: #2e2e2e;
+      --title: #f2bfbf;
+      --accent: #e09191;
+      --footer-bg: #222;
+    }
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
@@ -21,13 +41,28 @@
       padding: 30px 20px;
     }
 
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--box);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      z-index: 999;
+      font-weight: bold;
+    }
+
     .profile {
       text-align: center;
-      background: #fff;
+      background: var(--box);
       padding: 40px 20px;
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-      border: 2px solid #e8cfcf;
+      border: 2px solid var(--border);
     }
 
     .profile img {
@@ -35,7 +70,7 @@
       height: 170px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #d4a5a5;
+      border: 5px solid var(--accent);
       margin-bottom: 20px;
       transition: transform 0.3s ease;
     }
@@ -46,31 +81,31 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      color: #a15e5e;
+      color: var(--title);
       margin: 10px 0 5px;
     }
 
     p.title {
       font-size: 17px;
-      color: #7c7c7c;
+      color: var(--text);
     }
 
     section {
-      background: white;
+      background: var(--box);
       margin-top: 25px;
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border: 1px solid #f3e0e0;
+      border: 1px solid var(--border);
     }
 
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
-      border-bottom: 2px solid #f0e5e5;
+      border-bottom: 2px solid var(--border);
       padding-bottom: 8px;
       margin-bottom: 15px;
-      color: #b67c7c;
+      color: var(--title);
     }
 
     ul {
@@ -81,13 +116,13 @@
       text-align: center;
       margin-top: 40px;
       padding: 20px;
-      background: #a36868;
+      background: var(--footer-bg);
       color: white;
       font-size: 14px;
     }
 
     a {
-      color: #b46666;
+      color: var(--accent);
       text-decoration: none;
       transition: color 0.3s;
     }
@@ -100,19 +135,20 @@
       display: inline-flex;
       align-items: center;
       margin-bottom: 10px;
-      font-size: 16px;
-      animation: fadeIn 1s ease-in-out;
+      font-size: 17px;
+      animation: fadeInUp 1s ease-in-out;
+      gap: 8px;
     }
 
     .contact a i {
-      margin-right: 8px;
-      color: #b46666;
+      color: var(--accent);
+      font-size: 18px;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(5px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -123,6 +159,8 @@
 </head>
 <body>
 
+  <div class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</div>
+
   <div class="container">
     <div class="profile">
       <img src="faiz.jpg" alt="Faiz Ahmad">
@@ -132,7 +170,7 @@
 
     <section>
       <h2>About Me</h2>
-      <p>Hi! I'm Faiz Ahmad, currently in my first year of studies and a passionate Telegram bot developer. I love building helpful and creative bots for the Telegram community.</p>
+      <p>Hi! I'm Faiz Ahmad, a 1st year student and Telegram bot developer. I love creating bots that help people and make communication easier.</p>
     </section>
 
     <section>
@@ -143,16 +181,16 @@
     <section>
       <h2>Projects</h2>
       <ul>
-        <li><strong>File Store Bot</strong> – Stores files and generates shareable links</li>
-        <li><strong>File Sharing Bot</strong> – Share files easily on Telegram</li>
-        <li><strong>Music Downloader Bot</strong> – Download music directly via Telegram</li>
+        <li><strong>File Store Bot</strong> – Secure file storing & link sharing</li>
+        <li><strong>Music Downloader Bot</strong> – Download music through Telegram</li>
+        <li><strong>Group Manager Bot</strong> – Admin tools for group management</li>
       </ul>
     </section>
 
     <section class="contact">
       <h2>Contact</h2>
       <a href="mailto:sfaiz7307@gmail.com"><i class="fas fa-envelope"></i> sfaiz7307@gmail.com</a><br>
-      <a href="https://t.me/Sai2_1" target="_blank"><i class="fab fa-telegram-plane"></i> @Sai2_1</a>
+      <a href="https://t.me/Sai2_1" target="_blank"><i class="fab fa-telegram"></i> @Sai2_1</a>
     </section>
   </div>
 
@@ -160,5 +198,10 @@
     <p>© 2025 Faiz Ahmad. All rights reserved.</p>
   </footer>
 
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
 </html>
