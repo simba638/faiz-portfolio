@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Faiz Ahmad - Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg-light: #f9f6f1;
       --bg-dark: #1e1e1e;
-      --text-light: #333;
-      --text-dark: #f1f1f1;
+      --text-light: #333333;
+      --text-dark: #ffffff;
       --accent: #b76e79; /* rose gold */
     }
 
@@ -22,7 +22,7 @@
       font-family: 'Roboto', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
-      transition: background 0.4s, color 0.4s;
+      transition: background 0.3s, color 0.3s;
     }
 
     body.dark {
@@ -41,6 +41,7 @@
       color: white;
       cursor: pointer;
       font-weight: bold;
+      z-index: 1000;
     }
 
     .container {
@@ -51,10 +52,10 @@
 
     .profile {
       text-align: center;
+      background: linear-gradient(to right, #fffaf7, #fceeee);
       padding: 30px 20px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.08);
-      background: linear-gradient(to right, #fffaf7, #fceeee);
     }
 
     .profile img {
@@ -68,12 +69,6 @@
     h1 {
       margin: 15px 0 5px;
       color: var(--accent);
-    }
-
-    .typing {
-      font-size: 18px;
-      color: #777;
-      min-height: 25px;
     }
 
     section {
@@ -139,7 +134,7 @@
     <div class="profile">
       <img src="faiz.jpg" alt="Faiz Ahmad">
       <h1>Faiz Ahmad</h1>
-      <div class="typing" id="typing-text"></div>
+      <p>Telegram Bot Developer | Python Enthusiast</p>
     </div>
 
     <section>
@@ -179,30 +174,6 @@
   </footer>
 
   <script>
-    const typingText = document.getElementById("typing-text");
-    const roles = ["Telegram Bot Developer", "Python Coder", "Tech Explorer"];
-    let i = 0, j = 0, current = "", isDeleting = false;
-
-    function type() {
-      current = roles[i];
-      if (!isDeleting) {
-        typingText.textContent = current.substring(0, j++);
-        if (j > current.length) {
-          isDeleting = true;
-          setTimeout(type, 1000);
-          return;
-        }
-      } else {
-        typingText.textContent = current.substring(0, j--);
-        if (j < 0) {
-          isDeleting = false;
-          i = (i + 1) % roles.length;
-        }
-      }
-      setTimeout(type, isDeleting ? 60 : 120);
-    }
-    type();
-
     function toggleMode() {
       document.body.classList.toggle("dark");
     }
